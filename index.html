@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Build Private Cloud</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -41,14 +41,6 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Title</h1>
-					<h3>The HTML Presentation Framework</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
-				</section>
-
-				<section>
         <h1>Build Private Cloud</h1>
         <h3>High performance but low cost</h3>
         <p>
@@ -69,9 +61,8 @@
         </aside>
         </section>
 
-        <section>
-        <h2>Data Center</h2>
-        <img src="images/data_center.jpg" alt="Data Center">
+        <section data-background="images/data_center.jpg">
+        <h2 style="color: white; float:right; -webkit-text-stroke-width: 2px; -webkit-text-stroke-color: black;">Data Center</h2>
         <aside class="notes">
           ถ้าใครไม่เคยเห็น Data Center ก็จะเป็นอารมณ์ประมาณนี้นะครับ
           ห้องพวกนี้ จะเป็นห้องที่ออกแบบมาเป็นพิเศษเพื่อเก็บรวบรวม server มีระบบรักษาความปลอยภัยที่แน่นหนา
@@ -81,8 +72,8 @@
         </section>
         <section>
         <h2>Quanta 3U9N Server</h2>
-        <img src="images/quanta_3u.png" width="50%" alt="Quanta Server">
-        <img src="images/quanta_3u_closeup.png" width="50%" alt+"Quanta Server Close-up">
+        <img src="images/quanta_3u.png" width="40%" alt="Quanta Server">
+        <img src="images/quanta_3u_closeup.png" width="40%" alt+"Quanta Server Close-up">
         <aside class="notes">
         ที่ระคุเท็น เราซื้อ custom servers โดยตรงจากบริษัท Quanta จาก Taiwan จำนวนมาก เพื่อเปิด data center แห่งใหม่
         เพราะว่าเราซื้อจาก ODM อย่าง Quanta โดยตรงนี้เอง เราจะได้ราคาที่ถูก เทียบกับ performance ที่สูงขึ้น
@@ -125,36 +116,120 @@
         </section>
         </section>
 
+
         <section>
         <section>
         <h2>Baremetal Provisioning</h2>
         <img src="images/inventory2.png" alt="inventory ui">
         <aside class="notes">
-          และนี่ คือ
+          และนี่ คือ UI
         </aside>
         </section>
         <section>
+        <img src="images/json.png" style="width:50%; float:left;" alt="json">
+        <h2 style="text-align:right;"><br><br><br>RESTful API</h2>
         <aside class="notes">
           ข้างหลังของมันคือ backend api ที่เป็น json
           ต่อเข้ากับ mysql database ที่เก็บข้อมูลของ servers และ network switch ไว้ทั้งหมด
         </aside>
         </section>
         </section>
+        <section>
+        <section>
+        <h1>Architecture</h1>
+        </section>
+        <section>
+        <img src="images/architecture2.png" alt="architecture">
+        </section>
+        <section>
+        <img src="images/ui_arch.png">
+        </section>
+        </section>
 
         <section>
         <section>
-        <h2>Architecture</h2>
-        <img src="images/architecture.png" alt="architecture">
+        <h1>Cobbler</h1>
+        <p>
+        Make Linux installation under your control<br>
+        </p>
         </section>
         <section>
-        <h2>Cobbler</h2>
-        <img src="images/cobbler_interface.jpg" alt="cobbler interface">
+        <img src="images/cobbler_arch.png" alt="architecture">
         </section>
         <section>
-        <h2>Cobbler</h2>
+        <img src="images/cobbler_site.png" alt="cobbler interface">
+        </section>
+        <section>
+        <h2>OS Images</h2>
         <img src="images/os_selection.gif" alt="os selection">
         </section>
         </section>
+
+        <section>
+        <section>
+        <h1>Controller</h1>
+        <p>Combine all components into One</p>
+        </section>
+        <section>
+        <img src="images/controller_arch.png" alt="architecture">
+        </section>
+        </section>
+
+        <section>
+        <section>
+        <img src="images/chef_logo.png">
+        <h1>Chef</h1>
+        <p>
+        Apply all configurations<br>
+        (OS configs, accounts, monitoring, etc.)
+        </p>
+        </section>
+        <section>
+        <img src="images/chef_arch.png" alt="architecture">
+        </section>
+        </section>
+
+        <section>
+        <section>
+        <h1>Monitoring</h1>
+        <p>
+        Alert when there is a problem.<br>
+        Log to find the cause.<br>
+        Test to see the benchmark result.
+        </p>
+        </section>
+        <section>
+        <img src="images/monitoring_arch.png" alt="architecture">
+        </section>
+        <section>
+        <h2>Metric Dashboard</h2>
+        <img src="images/graphana.png">
+        </section>
+        <section>
+        <h2>Log Dashboard</h2>
+        <img src="images/kibana-logstash.png">
+        </section>
+        <section>
+        <h2>Alert & Solve the problem</h2>
+        <img src="images/shinken.png">
+        </section>
+        </section>
+
+				<section style="text-align: left;">
+					<h1>THE END</h1>
+					<!--<p>
+						- <a href="http://slides.com">Try the online editor</a> <br>
+						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+            </p>-->
+        </section>
+
+
+
+
+
+
+
+
 				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
