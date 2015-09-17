@@ -46,7 +46,19 @@
         <p>
           <small>Created by <a href="http://www.parnurzeal.com">Theeraphol Wattanavekin</a> / <a href="http://twitter.com/parnurzeal">@parnurzeal</a></small>
         </p>
+        <aside class="notes">
+          สวัสดีครับทุกคน ผมชื่อ เอ ธีระพล นะครับ ไม่ใช่ เคน ธีรเดช
+          วันนี้ ผมจะมาพูดเกี่ยวกับการทำ private cloud ในบริษัทกัน
+        </aside>
         </section>
+
+        <!--<section>
+        <aside class="notes">
+        ตัวผมเองนั้น ผมทำงานที่ Rakuten ที่ญี่ปุ่น ทำงาน project นี้มา 1 ปีเต็ม
+        Rakuten เป็นบริษัท Online Shopping Mall ที่ใหญ่ที่สุดในญี่ปุ่น
+        และปรากฎตัวอยู่ในระดับ Global stage ในหลายๆประเทศ อย่างประเทศไทย Tarad ก็เป็นสาขานึงของ Rakuten
+        </aside>
+        </section>-->
 
         <section>
         <h2>Private cloud??? <br>Why not public one?</h2>
@@ -58,6 +70,17 @@
           <li>Lower cost</li>
         </ul>
         <aside class="notes">
+        เอาละ มาเข้าเรื่องกัน ทุกคนหลายกันในห้องคงจะได้ใช้พวก public cloud กันเป็นส่วนใหญ่
+        ไม่ว่าจะเป็น Amazon AWS, Digital Ocean, Google Cloud Platform, etc. และอีกมากมาย
+        ทุกคนก็คงจะสงสัยว่าพวกนี้ก็มีให้ใช้เยอะแยะ แล้วทำไมต้องมาสร้าง private cloud ของตัวเองด้วย???
+
+        อย่างแรกเลย คือ เรื่องของ Security ซึ่งถือเป็นเรื่องหลักเรื่องหนึ่งที่ Rakuten คิดจะสร้าง private cloud ของตัวเอง
+        การที่เป็น public cloud เราเหมือนยื่น data ของเราทั้งหมดไปฝากไว้กับคนอื่น
+
+        อย่างที่สอง เรื่องของ performance ซึ่งการทำ private cloud ทำให้เราสามารถเลือก hardware server ได้เอง
+        ซึ่ง ณ ตอนนั้นเราเลือกที่จะรัน application มัน pure server ไม่ใช้ VM เพื่อให้ได้ high performance ที่ค่อนข้าง stable มากกว่า VM
+
+
         </aside>
         </section>
 
@@ -116,10 +139,25 @@
         </section>
         </section>
 
+        <section data-background="#b5533c" >
+        <img src="images/inventory2.png">
+        </section>
 
         <section>
         <section>
-        <h2>Baremetal Provisioning</h2>
+        <h2>Architecture @ <span style="color:red;">Rakuten</span></h2>
+        </section>
+        <section>
+        <img src="images/architecture2.png" alt="architecture">
+        </section>
+        </section>
+
+        <section>
+        <section>
+        <img src="images/ui_arch2.png">
+        </section>
+        <section>
+        <h2>UI</h2>
         <img src="images/inventory2.png" alt="inventory ui">
         <aside class="notes">
           และนี่ คือ UI
@@ -127,55 +165,34 @@
         </section>
         <section>
         <img src="images/json.png" style="width:50%; float:left;" alt="json">
-        <h2 style="text-align:right;"><br><br><br>RESTful API</h2>
+        <h2 style="text-align:right;"><br><br><br>Inventory API (Restful)</h2>
         <aside class="notes">
           ข้างหลังของมันคือ backend api ที่เป็น json
           ต่อเข้ากับ mysql database ที่เก็บข้อมูลของ servers และ network switch ไว้ทั้งหมด
         </aside>
         </section>
         </section>
-        <section>
-        <section>
-        <h1>Architecture</h1>
-        </section>
-        <section>
-        <img src="images/architecture2.png" alt="architecture">
-        </section>
-        <section>
-        <img src="images/ui_arch.png">
-        </section>
-        </section>
+
 
         <section>
-        <section>
+        <!--<section>
         <h1>Cobbler</h1>
         <p>
         Make Linux installation under your control<br>
         </p>
-        </section>
+        </section>-->
         <section>
-        <img src="images/cobbler_arch.png" alt="architecture">
+        <img src="images/cobbler_arch2.png" alt="architecture">
         </section>
         <section>
         <img src="images/cobbler_site.png" alt="cobbler interface">
         </section>
-        <section>
-        <h2>OS Images</h2>
-        <img src="images/os_selection.gif" alt="os selection">
-        </section>
         </section>
 
         <section>
         <section>
-        <h1>Controller</h1>
-        <p>Combine all components into One</p>
+        <img src="images/chef_arch2.png" alt="architecture">
         </section>
-        <section>
-        <img src="images/controller_arch.png" alt="architecture">
-        </section>
-        </section>
-
-        <section>
         <section>
         <img src="images/chef_logo.png">
         <h1>Chef</h1>
@@ -184,22 +201,28 @@
         (OS configs, accounts, monitoring, etc.)
         </p>
         </section>
-        <section>
-        <img src="images/chef_arch.png" alt="architecture">
-        </section>
         </section>
 
         <section>
         <section>
-        <h1>Monitoring</h1>
-        <p>
-        Alert when there is a problem.<br>
-        Log to find the cause.<br>
-        Test to see the benchmark result.
-        </p>
+        <img src="images/controller_arch.png" alt="architecture">
         </section>
         <section>
-        <img src="images/monitoring_arch.png" alt="architecture">
+        <img src="images/controller_arch2.png">
+        </section>
+        <section>
+        <h1>Controller</h1>
+        <p>Combine all components into One</p>
+        </section>
+        </section>
+
+
+        <section>
+        <section>
+        <img src="images/monitoring_arch2.png" alt="architecture">
+        </section>
+        <section>
+        <img src="images/monitoring_arch3.png">
         </section>
         <section>
         <h2>Metric Dashboard</h2>
@@ -213,22 +236,24 @@
         <h2>Alert & Solve the problem</h2>
         <img src="images/shinken.png">
         </section>
+        <section>
+        <h1>Monitoring</h1>
+        <p>
+        Alert when there is a problem.<br>
+        Log to find the cause.<br>
+        Test to see the benchmark result.
+        </p>
+        </section>
         </section>
 
 				<section style="text-align: left;">
 					<h1>THE END</h1>
-					<!--<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-            </p>-->
+					<p>
+						- Github: <a href="http://github.com/parnurzeal">parnurzeal</a> <br>
+            - Cobbler: <a href="http://cobbler.github.io/">http://cobbler.github.io/</a> <br>
+            - Chef: <a href="https://www.chef.io/">https://www.chef.io/</a>
+          </p>
         </section>
-
-
-
-
-
-
-
 
 				<!-- Example of nested vertical slides -->
 				<section>
